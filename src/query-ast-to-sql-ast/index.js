@@ -67,11 +67,11 @@ export function queryASTToSqlAST(resolveInfo, options, context) {
   populateASTNode.call(resolveInfo, queryAST, parentType, sqlAST, namespace, 0, options, context)
 
   // make sure they started this party on a table
-  assert.equal(
-    sqlAST.type,
-    'table',
-    'Must call joinMonster in a resolver on a field where the type is decorated with "sqlTable".'
-  )
+  // assert.equal(
+  //   sqlAST.type,
+  //   'table',
+  //   'Must call joinMonster in a resolver on a field where the type is decorated with "sqlTable".'
+  // )
 
   // make sure each "sqlDep" is only specified once at each level. also assign it an alias
   pruneDuplicateSqlDeps(sqlAST, namespace)
